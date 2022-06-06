@@ -1,0 +1,156 @@
+/* Style the video: 100% width and height to cover the entire window */
+* {
+  margin: 0;
+  padding: 0;
+}
+.containers {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+.video-frame {
+  height: 100% !important;
+  width: 100% !important;
+  /* overflow: hidden; */
+}
+#myVideo {
+  position: absolute;
+  object-fit: cover;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100vh;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  left: 41%;
+  /* background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1; */
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #f0e42a;
+  text-transform: capitalize;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 24px;
+  overflow: hidden;
+  transition: 0.2s;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+#myBtn:hover{
+  color: #010407;
+  background: #dcd32f;
+  box-shadow: 0 0 10px #f0e42a, 0 0 40px #f0e42a, 0 0 80px #f0e42a;
+  transition-delay: 1.1s;
+}
+
+#myBtn span{
+  position: absolute;
+  display: block;
+}
+
+#myBtn span:nth-child(1){
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #dcd32f);
+}
+#myBtn:hover span:nth-child(1){
+  left: 100%;
+  transition: 1s;
+}
+
+#myBtn span:nth-child(3){
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #dcd32f);
+}
+#myBtn:hover span:nth-child(3){
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+#myBtn span:nth-child(2){
+  right: 0;
+  top: -100%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #dcd32f);
+}
+#myBtn:hover span:nth-child(2){
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+#myBtn span:nth-child(4){
+  left: 0;
+  bottom: -100%;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #dcd32f);
+}
+#myBtn:hover span:nth-child(4){
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+.transition {
+  opacity: 0;
+  animation: show 3s ease-in forwards;
+}
+
+@keyframes show{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .myVideo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .myVideo {
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* .video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+  content: "";
+  background-image: url('https://pngimage.net/wp-content/uploads/2018/06/svt-png-9.png');
+  background-repeat: no-repeat;
+  background-size: 46px;
+  background-position: 55% calc(50% - 0px);
+  border: none !important;
+  box-shadow: none !important;
+} */
+
+.vjs-control-bar {
+  display: none !important;
+}

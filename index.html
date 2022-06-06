@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+	<title>SBH Launching</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/videojs.css">
+</head>
+
+<body>
+	<section>
+		<div class="containers">
+			<div class="video-frame">
+				<video id="my-video" class="video-js vjs-matrix" controls preload="auto" poster="css/cover.png" data-setup="{}">
+					<source src="video/launching.mp4" type="video/mp4" />
+					<p class="vjs-no-js">
+						To view this video please enable JavaScript, and consider upgrading to a
+						web browser that
+						<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+					</p>
+				</video>
+			</div>
+			<!-- <video autoplay plays-inline id="myVideo">
+				<source src="video/launching.mp4" type="video/mp4">
+			</video> -->
+
+			<div class="content">
+				<a href="https://splp.bukittinggikota.go.id" target="_blank" id="myBtn" class="d-none" onclick="start()">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					Release SBH
+				</a>
+			</div>
+	</section>
+
+	</div>
+
+
+	<script src="js/index.js"></script>
+	<script src="js/jquery3.js"></script>
+	<script src="js/video.min.js"></script>
+	<script>
+		var player = videojs('my-video', {
+			aspectRatio: '16:9',
+			fill: true,
+			controls: true,
+			autoplay: false,
+		});
+
+		$('.vjs-big-play-button').click(function () {
+			console.log('work')
+			var counter = 25;
+			setInterval(function () {
+				console.log('work1')
+				counter--;
+				if (counter === 0) {
+					console.log('work3')
+					$('#myBtn').removeClass('d-none')
+					$('#myBtn').addClass('transition')
+					// clearInterval(counter);
+				}
+			}, 1000);
+		})
+	</script>
+</body>
+
+</html>
